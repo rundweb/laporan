@@ -10,6 +10,7 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   </head>
   <body>
     <div class="popup">
@@ -26,15 +27,13 @@
             <input type="number" required id="tabung-edit" />
           </div>
         </div>
-        <div class="btn">
-          
-        </div>
+        <div class="btn"></div>
       </div>
     </div>
     <div class="laporan">
       <div class="laporan-content">
         <div class="laporan-title">
-          <p>
+          <p style="margin-left: 15px">
             Nama Pangkalan :
             <select id="pangkalan">
               <option value="Adinda Heryuningtyas">Adinda Heryuningtyas</option>
@@ -55,7 +54,7 @@
             <label>Jumlah</label>
             <input type="number" required id="tabung" />
           </div>
-          <button id="btn-tambah">Tambah</button>
+          <button id="btn-tambah"><i class="ri-add-fill"></i></button>
         </div>
         <table>
           <thead>
@@ -79,8 +78,46 @@
             </tr>
           </tfoot>
         </table>
+
+        <button class="btn-download" onclick="download()">
+          Donwload Laporan
+        </button>
       </div>
     </div>
+
+    <div class="laporan-download">
+      <div class="laporan-content-download">
+        <div class="laporan-title-download">
+          <p >
+            Nama Pangkalan :
+            <span>Adinda Heryuningtyas</span>
+          </p>
+          <p>No Reg Pangkalan : 315720892666012</p>
+          <p>Alamat : Daru Jambe</p>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Tanggal</th>
+              <th>Jumlah</th>
+              <th>Harga</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="tBody-download"></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">Total</td>
+              <td id="total-tabung-download"></td>
+              <td></td>
+              <td id="total-harga-download"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
     <script src="main.js"></script>
   </body>
 </html>

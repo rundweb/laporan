@@ -50,6 +50,46 @@ function showTotal() {
 }
 showTotal()
 
+function showDownload() {
+    const tBodyDonwload = document.querySelector('#tBody-download')
+    document.querySelectorAll('#datas-download').forEach(datas => datas.remove())
+    for (let i = 0; i < data.length; i++) {
+        let tagTable = `
+            <tr id='datas-download'>
+              <td>${i + 1}</td>
+              <td>${data[i].tanggal}</td>
+              <td>${data[i].tabung}</td>
+              <td>${formatRupiah(data[i].harga)}</td>
+              <td>${formatRupiah(data[i].total)}</td>
+              </tr>
+        `
+        tBodyDonwload.innerHTML += tagTable
+    }
+}
+showDownload()
+
+function showTotalDownload() {
+    const tTabung = document.querySelector('#total-tabung-download')
+    const tHarga = document.querySelector('#total-harga-download')
+    setInterval(() => {
+        let totalTabung = 0,
+            totalHarga = 0
+        for (let i = 0; i < data.length; i++) {
+            totalHarga += data[i].total
+            totalTabung += parseInt(data[i].tabung)
+
+            tTabung.innerHTML = totalTabung
+            tHarga.innerHTML = formatRupiah(totalHarga)
+        }
+    }, 100);
+
+    if (data.length === 0) {
+        tTabung.innerHTML = 0
+        tHarga.innerHTML = 0
+    }
+
+}
+showTotalDownload()
 
 function btnAksi(id, tanggal, tabung) {
     const editTanggal = document.querySelector('#tanggal-edit'),
@@ -57,7 +97,7 @@ function btnAksi(id, tanggal, tabung) {
     let dt = new Date(tanggal).toISOString().split('T')[0]
     document.querySelector('.popup').style.display = 'flex'
     let tagBtn = `
-            <button id="btn-edit">Edit</button>
+            <button id="btn-edit" onclick='btnEdit(${id},${tanggal},${tabung})'>Edit</button>
             <button id="btn-hapus" onclick='btnHapus(${id})'>Hapus</button>
     `
     document.querySelector('.btn').innerHTML = tagBtn
@@ -73,6 +113,34 @@ function btnHapus(id) {
     alert('Data berhasil di hapus')
     btnClose.click()
     showTotal()
+    showDownload()
+}
+
+function btnEdit(id, tanggal, tabung) {
+    let dt = new Date(tanggal).toISOString().split('T')[0]
+    const tanggalEdit = document.querySelector('#tanggal-edit'),
+        tabungEdit = document.querySelector('#tabung-edit')
+    let infoEdit = {
+        tanggal: tanggalEdit.value,
+        tabung: tabungEdit.value,
+        harga: 15000,
+        total: tabungEdit.value * 15000
+
+    }
+    console.log(data.find(date => date.tanggal == tanggalEdit.value) == data[id])
+
+    if (data.find(date => date.tanggal == tanggalEdit.value) ) {
+        if (!data[id]) {
+            console.log('ok')
+        }
+    } else {
+        alert('data berhasil diubah')
+        data[id] = infoEdit
+        showData()
+        showTotal()
+        showDownload()
+        btnClose.click()
+    }
 }
 
 btnTambah.addEventListener('click', e => {
@@ -91,17 +159,20 @@ btnTambah.addEventListener('click', e => {
             alert('Tanggal sudah ada')
             showData()
             showTotal()
+            showDownload()
         } else {
             data.push(infoBarang)
             alert('Data berhasil di tambah')
             clear()
             showData()
             showTotal()
+            showDownload()
         }
     } else {
         alert('Tanggal atau jumlah belum di isi')
         showData()
         showTotal()
+        showDownload()
     }
 })
 
@@ -122,3 +193,12 @@ btnClose.addEventListener('click', () => {
     document.querySelector('.popup').style.display = 'none'
     document.querySelector('.btn').innerHTML = ''
 })
+
+
+function download() {
+    const element = document.querySelector('.laporan-download')
+
+    html2pdf()
+        .from(element)
+        .save()
+}

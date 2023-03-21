@@ -42,14 +42,15 @@ th,
 td {
   border: 1px solid #afa3d1;
   padding: 5px;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 500;
 }
 
 select{
   border: none;
   background-color: #f7f6fa;
-  font-size: 14px;
+  font-size: 16px;
+  margin-left: 5px;
 }
 
 .laporan-input{
@@ -72,6 +73,9 @@ input{
   padding: 5px;
   margin-right: 10px;
   margin-top: 2px;
+}
+#tanggal{
+  width: 120px;
 }
 
 #tabung{
@@ -111,6 +115,7 @@ i{
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  width: 90%;
 }
 .popup-content p{
   font-size: 18px;
@@ -122,6 +127,7 @@ i{
 .popup-input{
   display: flex;
   margin-bottom: 20px;
+  gap: 10px;
 }
 
 .laporan-popup-content{
@@ -143,7 +149,7 @@ i{
   color: #f7f6fa;
 }
 
-#btn-edit{
+#btn-edit,.btn-download{
   background-color: #949fbc;
   color: #f7f6fa;
 }
@@ -154,4 +160,49 @@ i{
   color: #8e7dbe;
   right: 12px;
   top: 16px;
+}
+
+
+
+#tanggal-edit,#tabung-edit{
+  width: 100%;
+}
+
+.btn-download{
+  font-size: 10px;
+  border: none;
+  padding: 8px 10px;
+  width: fit-content;
+  border-radius: 4px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.laporan-download{
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
+.laporan-title-download{
+  margin-bottom: 20px;
+}
+
+.laporan-title-download p{
+  font-size: 16px;
+}
+
+.laporan-content-download{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.laporan-content-download th, .laporan-content-download td{
+  font-size: 14px;
+  border: .5px solid #222;
+  padding: 5px 16px;
 }
