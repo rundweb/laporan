@@ -4,6 +4,7 @@ const inputTanggal = document.querySelector('#tanggal'),
     btnClose = document.querySelector('#close')
 
 const data = []
+const hargaGas = 16000
 
 function showData() {
     const tBody = document.querySelector('#tBody')
@@ -117,30 +118,21 @@ function btnHapus(id) {
 }
 
 function btnEdit(id, tanggal, tabung) {
-    let dt = new Date(tanggal).toISOString().split('T')[0]
     const tanggalEdit = document.querySelector('#tanggal-edit'),
         tabungEdit = document.querySelector('#tabung-edit')
     let infoEdit = {
         tanggal: tanggalEdit.value,
         tabung: tabungEdit.value,
-        harga: 15000,
-        total: tabungEdit.value * 15000
+        harga: hargaGas,
+        total: tabungEdit.value * hargaGas
 
     }
-    console.log(data.find(date => date.tanggal == tanggalEdit.value) == data[id])
-
-    if (data.find(date => date.tanggal == tanggalEdit.value) ) {
-        if (!data[id]) {
-            console.log('ok')
-        }
-    } else {
-        alert('data berhasil diubah')
-        data[id] = infoEdit
-        showData()
-        showTotal()
-        showDownload()
-        btnClose.click()
-    }
+    alert('data berhasil diubah')
+    data[id] = infoEdit
+    showData()
+    showTotal()
+    showDownload()
+    btnClose.click()
 }
 
 btnTambah.addEventListener('click', e => {
@@ -152,8 +144,8 @@ btnTambah.addEventListener('click', e => {
         let infoBarang = {
             tanggal: infoTanggal,
             tabung: infoTabung,
-            harga: 15000,
-            total: infoTabung * 15000
+            harga: hargaGas,
+            total: infoTabung * hargaGas
         }
         if (data.find(data => data.tanggal == infoTanggal)) {
             alert('Tanggal sudah ada')
@@ -196,9 +188,15 @@ btnClose.addEventListener('click', () => {
 
 
 function download() {
-    const element = document.querySelector('.laporan-download')
-
+    const element = document.querySelector('.laporan-download'),
+    pangkalan = document.querySelector('#pangkalan')
+    document.querySelector('.nama').innerHTML = pangkalan.value
+    element.style.display = 'flex'
     html2pdf()
         .from(element)
         .save()
+
+        setTimeout(() => {
+            element.style.display = 'none'
+        }, 10);
 }

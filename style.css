@@ -179,9 +179,10 @@ i{
 }
 
 .laporan-download{
-  display: flex;
+  display: none;
   justify-content: center;
   min-height: 100vh;
+  margin-top: 100px;
   width: 100%;
   text-align: center;
   font-family: 'Times New Roman', Times, serif !important;
