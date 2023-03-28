@@ -42,10 +42,7 @@
             <input type="text" id="keterangan-edit" />
           </div>
 
-          <div class="btn">
-            <button class="btn-edit">Edit</button>
-            <button class="btn-hapus">Hapus</button>
-          </div>
+          <div class="btn"></div>
         </div>
       </div>
     </div>
@@ -99,14 +96,57 @@
               <th>Detail</th>
             </tr>
           </thead>
-          <tbody class=".tbody">
-            
-          </tbody>
+          <tbody class="tbody"></tbody>
         </table>
 
-        <button class="btn-download">
+        <button class="btn-download" onclick="download()">
           Download Laporan <i class="ri-save-line"></i>
         </button>
+      </div>
+    </div>
+
+    <div class="pengeluaran-download">
+      <div class="download-content">
+        <div class="download-title">
+          <p>Nama Pangkalan : <span class="nama"></span></p>
+          <p>No Reg Pangkalan : 315720892666012</p>
+          <p>Alamat : Daru Jambe</p>
+        </div>
+
+        <table class="table-download">
+          <thead>
+            <tr>
+              <td>No</td>
+              <td>Tanggal</td>
+              <td>Jenis Pengeluaran</td>
+              <td>Harga Pengeluaran</td>
+              <td>Keterangan</td>
+            </tr>
+          </thead>
+          <tbody class="tbody-download"></tbody>
+          <tfoot>
+            <td colspan="3">Total</td>
+            <td class="total"></td>
+            <td></td>
+          </tfoot>
+        </table>
+        <p class="pp">Saldo Akhir Bulan <span class="bulan-lalu"></span></p>
+        <div class="laporan-bottom">
+          <table class="table-bottom">
+            <tr>
+              <td>Total Setoran</td>
+              <td class="setoran"></td>
+            </tr>
+            <tr>
+              <td>Total Pengeluaran</td>
+              <td class="pengeluaran-setoran"></td>
+            </tr>
+            <tr>
+              <td>Sisa Saldo</td>
+              <td class="saldo"></td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
     <script src="main.js"></script>

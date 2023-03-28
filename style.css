@@ -98,13 +98,14 @@ input {
   border-collapse: collapse;
   text-align: center;
   margin-top: 10px;
+  width: 100%;
 }
 
 th,
 td {
   border: 1px solid var(--border-color);
   font-size: 12px;
-  padding: 2px 6px;
+  padding: 4px 2px;
   font-weight: 500;
 }
 
@@ -195,4 +196,71 @@ td {
 
 .btn-hapus{
     background-color: var(--btn-hapus);
+}
+
+.pengeluaran-download{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  margin-top: 100px;
+  min-height: 100vh;
+  width: 100%;
+}
+.download-content{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.download-title p{
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.table-download {
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 16px;
+  width: 100%;
+
+}
+
+.table-download th,
+.table-download td {
+  border: 0.1px solid rgb(0, 0, 0);
+  font-size: 16px;
+  padding: 4px 10px;
+  font-weight: 400;
+}
+
+.laporan-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  text-align: center;
+}
+
+.pp {
+font-size: 18px;
+margin-top: 40px;
+}
+
+.table-bottom {
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 16px;
+
+}
+
+.table-bottom th,
+.table-bottom td {
+  border: 0.1px solid rgb(0, 0, 0);
+  font-size: 16px;
+  padding: 4px 10px;
+  font-weight: 400;
 }
