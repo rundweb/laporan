@@ -11,6 +11,11 @@ const btnTambah = document.querySelector('.btn-tambah'),
     btnClose = document.querySelector('.close')
 
 const data = []
+const saldo = []
+const pemasukan = []
+
+
+
 
 const namaBulan = ['Januari', 'Februari', 'Maret', 'Aprin', 'Mei', 'Juni', 'July', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
 // btnDetail.addEventListener('click',e=>{
@@ -148,14 +153,22 @@ showDownload()
 
 function showTotalDownload() {
     const total = document.querySelector('.total')
-    setInterval(() => {
+    setTimeout(() => {
         let totalHarga = 0
         for (let i = 0; i < data.length; i++) {
             totalHarga += parseInt(data[i].pengeluaran)
             total.innerHTML = formatRupiah(totalHarga)
             document.querySelector('.pengeluaran-setoran').innerHTML = formatRupiah(totalHarga)
+
+            if (saldo.length == 0) {
+                saldo.push(totalHarga)
+            }else{
+                saldo.shift()
+                saldo.push(totalHarga)
+            }
         }
     }, 100);
+
     if (data.length === 0) {
         total.innerHTML = 0
     }
@@ -163,9 +176,8 @@ function showTotalDownload() {
 }
 showTotalDownload()
 
-function myFunc(total, num) {
-    return total - num;
-}
+// menangkap includes
+
 
 function clearInput() {
     inputTanggal.value = ''
@@ -179,29 +191,24 @@ function clearInput() {
     editKeterangan.value = ''
 
 }
-const formatRupiah = (money) => {
-    return new Intl.NumberFormat('id-ID', {
-        style: 'currency',
-        currency: 'IDR',
-        minimumFractionDigits: 0
-    }).format(money);
-}
-
 
 
 function download() {
     var downloaded = document.querySelector('.pengeluaran-download')
-
     var pangkalan = document.querySelector('#pangkalan')
     document.querySelector('.nama').innerHTML = pangkalan.value
+    var gas = document.querySelector('#gas').value
+    let pemasukanGas = gas * 16000
+    pemasukan.push(pemasukanGas)
+    document.querySelector('.setoran').innerHTML = formatRupiah(pemasukan)
+    let jumlah =  pemasukanGas - saldo
+    
     document.querySelector('.pengeluaran-download').style.display = 'flex'
+
+    document.querySelector('.saldo').innerHTML = formatRupiah(jumlah)
     let bulan = new Date(),
         getBulan = namaBulan[bulan.getMonth() - 1]
-
     document.querySelector('.bulan-lalu').innerHTML = getBulan
-
-    
-
     var opt = {
         filename: `Pengeluaran Bulan ${getBulan}`,
     };
@@ -212,4 +219,12 @@ function download() {
     setTimeout(() => {
         document.querySelector('.pengeluaran-download').style.display = 'none'
     }, 10);
+}
+
+const formatRupiah = (money) => {
+    return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 0
+    }).format(money);
 }
