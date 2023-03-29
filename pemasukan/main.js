@@ -12,10 +12,13 @@ function showData() {
     for (let i = 0; i < data.length; i++) {
         let d = new Date(data[i].tanggal)
         let ubahTanggal = d.getTime()
+
+        let dd = new Date(data[i].tanggal)
+        let ubahTanggall = d.toLocaleDateString("id")
         let tagTable = `
             <tr id='datas'>
               <td>${i + 1}</td>
-              <td>${data[i].tanggal}</td>
+              <td>${ubahTanggall}</td>
               <td>${data[i].tabung}</td>
               <td>${formatRupiah(data[i].harga)}</td>
               <td>${formatRupiah(data[i].total)}</td>
@@ -55,10 +58,12 @@ function showDownload() {
     const tBodyDonwload = document.querySelector('#tBody-download')
     document.querySelectorAll('#datas-download').forEach(datas => datas.remove())
     for (let i = 0; i < data.length; i++) {
+        let d = new Date(data[i].tanggal)
+        let ubahTanggal = d.toLocaleDateString("id")
         let tagTable = `
             <tr id='datas-download'>
               <td>${i + 1}</td>
-              <td>${data[i].tanggal}</td>
+              <td>${ubahTanggal}</td>
               <td>${data[i].tabung}</td>
               <td>${formatRupiah(data[i].harga)}</td>
               <td>${formatRupiah(data[i].total)}</td>

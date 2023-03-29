@@ -35,10 +35,13 @@ function showData() {
     for (let i = 0; i < data.length; i++) {
         let ubahTanggal = new Date(data[i].tanggal)
         let tanggalTime = ubahTanggal.getTime()
+
+        let d = new Date(data[i].tanggal)
+        let ubahTanggall = d.toLocaleDateString("id")
         let tagTable = `
             <tr class='datas'>
               <td>${i + 1}</td>
-              <td>${data[i].tanggal}</td>
+              <td>${ubahTanggall}</td>
               <td>${data[i].jenis}</td>
               <td>
                 <button class="btn-detail" onclick='btnAksi(${i},${tanggalTime},"${data[i].jenis}",${data[i].pengeluaran},"${data[i].keterangan}")'><i class="ri-folder-5-line"></i></button>
@@ -137,10 +140,12 @@ btnTambah.addEventListener('click', e => {
 function showDownload() {
     document.querySelectorAll('.datass').forEach(d => d.remove())
     for (let i = 0; i < data.length; i++) {
+        let d = new Date(data[i].tanggal)
+        let ubahTanggal = d.toLocaleDateString("id")
         let tagTablee = `
             <tr class='datass'>
               <td>${i + 1}</td>
-              <td>${data[i].tanggal}</td>
+              <td>${ubahTanggal}</td>
               <td>${data[i].jenis}</td>
               <td>${formatRupiah(data[i].pengeluaran)}</td>
               <td>${data[i].keterangan}</td>
