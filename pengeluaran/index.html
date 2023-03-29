@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pengeluaran</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="popup">
+      <div class="popup-content">
+        <div class="close">
+          <i class="ri-close-circle-fill"></i>
+        </div>
+        <center>
+          <p>Detail Pengeluaran</p>
+        </center>
+        <div class="pengeluaran-input">
+          <div class="input-top">
+            <div class="input-content">
+              <label for="">Tanggal</label>
+              <input type="date" id="tanggal-edit" />
+            </div>
+            <div class="input-content">
+              <label for="">Pengeluaran</label>
+              <input type="number" id="pengeluaran-edit" />
+            </div>
+          </div>
+          <div class="input-content">
+            <label for="">Jenis Pengeluaran</label>
+            <input type="text" id="jenis-edit" />
+          </div>
+
+          <div class="input-content">
+            <label for="">Keterangan</label>
+            <input type="text" id="keterangan-edit" />
+          </div>
+
+          <div class="btn"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pengeluaran">
+      <div class="pengeluaran-content">
+        <a href="../index.html" class="keluar"
+          ><i class="ri-arrow-left-line"></i
+        ></a>
+        <div class="pengeluaran-title">
+          <p>
+            Nama Pangkalan :
+            <select id="pangkalan">
+              <option value="Adinda Heryuningtyas">Adinda Heryuningtyas</option>
+              <option value="Tuti Aristi Pritawati">
+                Tuti Aristi Pritawati
+              </option>
+            </select>
+          </p>
+          <p>No Reg Pangkalan : 315720892666012</p>
+          <p>Alamat : Daru Jambe</p>
+        </div>
+
+        <div class="pengeluaran-input">
+          <div class="input-top">
+            <div class="input-content">
+              <label for="">Tanggal</label>
+              <input type="date" id="tanggal" />
+            </div>
+            <div class="input-content">
+              <label for="">Pengeluaran</label>
+              <input type="number" id="pengeluaran" />
+            </div>
+          </div>
+          <div class="input-content">
+            <label for="">Jenis Pengeluaran</label>
+            <input type="text" id="jenis" />
+          </div>
+          <div class="input-bottom">
+            <div class="input-content">
+              <label for="">Keterangan</label>
+              <input type="text" id="keterangan" />
+            </div>
+            <button class="btn-tambah">Tambah</button>
+          </div>
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Tanggal</th>
+              <th>Jenis Pengeluaran</th>
+              <th>Detail</th>
+            </tr>
+          </thead>
+          <tbody class="tbody"></tbody>
+        </table>
+        <div
+          class="input-tabung"
+          style="
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin-top: 15px;
+          "
+        >
+          <label style="font-size: 12px">Masukan jumlah Gas Terjual</label>
+          <input type="number" id="gas" autocomplete="off" />
+        </div>
+        <button class="btn-download" onclick="download()">
+          Download Laporan <i class="ri-save-line"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="pengeluaran-download">
+      <div class="download-content">
+        <div class="download-title">
+          <p>Nama Pangkalan : <span class="nama"></span></p>
+          <p>No Reg Pangkalan : 315720892666012</p>
+          <p>Alamat : Daru Jambe</p>
+        </div>
+
+        <table class="table-download">
+          <thead>
+            <tr>
+              <td>No</td>
+              <td>Tanggal</td>
+              <td>Jenis Pengeluaran</td>
+              <td>Harga Pengeluaran</td>
+              <td>Keterangan</td>
+            </tr>
+          </thead>
+          <tbody class="tbody-download"></tbody>
+          <tfoot>
+            <td colspan="3">Total</td>
+            <td class="total"></td>
+            <td></td>
+          </tfoot>
+        </table>
+        <p class="pp">Saldo Akhir Bulan <span class="bulan-lalu"></span></p>
+        <div class="laporan-bottom">
+          <table class="table-bottom">
+            <tr>
+              <td>Total Setoran</td>
+              <td class="setoran"></td>
+            </tr>
+            <tr>
+              <td>Total Pengeluaran</td>
+              <td class="pengeluaran-setoran"></td>
+            </tr>
+            <tr>
+              <td>Sisa Saldo</td>
+              <td class="saldo"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

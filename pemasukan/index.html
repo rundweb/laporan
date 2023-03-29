@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laporan</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="popup">
+      <div class="popup-content">
+        <i class="ri-close-circle-fill" id="close"></i>
+        <p>Ubah Data</p>
+        <div class="popup-input">
+          <div class="laporan-popup-content">
+            <label>Tanggal</label>
+            <input type="date" required id="tanggal-edit" />
+          </div>
+          <div class="laporan-popup-content">
+            <label>Jumlah</label>
+            <input type="number" required id="tabung-edit" />
+          </div>
+        </div>
+        <div class="btn"></div>
+      </div>
+    </div>
+    <div class="laporan">
+      <div class="laporan-content">
+        <a href="../index.html" class="keluar"
+          ><i class="ri-arrow-left-line"></i></a>
+        <div class="laporan-title">
+          <p style="margin-left: 15px">
+            Nama Pangkalan :
+            <select id="pangkalan">
+              <option value="Adinda Heryuningtyas">Adinda Heryuningtyas</option>
+              <option value="Tuti Aristi Pritawati">
+                Tuti Aristi Pritawati
+              </option>
+            </select>
+          </p>
+          <p>No Reg Pangkalan : 315720892666012</p>
+          <p>Alamat : Daru Jambe</p>
+        </div>
+        <div class="laporan-input">
+          <div class="laporan-input-content">
+            <label>Tanggal</label>
+            <input type="date" required id="tanggal" />
+          </div>
+          <div class="laporan-input-content">
+            <label>Jumlah</label>
+            <input type="number" required id="tabung" />
+          </div>
+          <button id="btn-tambah"><i class="ri-add-fill"></i></button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Tanggal</th>
+              <th>Jumlah</th>
+              <th>Harga</th>
+              <th>Total</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="tBody"></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">Total</td>
+              <td id="total-tabung"></td>
+              <td></td>
+              <td id="total-harga"></td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <button class="btn-download" onclick="download()">
+          Donwload Laporan
+        </button>
+      </div>
+    </div>
+
+    <div class="laporan-download">
+      <div class="laporan-content-download">
+        <div class="laporan-title-download">
+          <p>
+            Nama Pangkalan :
+            <span class="nama"></span>
+          </p>
+          <p>No Reg Pangkalan : 315720892666012</p>
+          <p>Alamat : Daru Jambe</p>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Tanggal</th>
+              <th>Jumlah</th>
+              <th>Harga</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="tBody-download"></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">Total</td>
+              <td id="total-tabung-download"></td>
+              <td></td>
+              <td id="total-harga-download"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Fasthand&display=swap");
+:root {
+  --background-color: #d7d1e8;
+  --background-color-secondary: #f7f6fa;
+  --border-color: #afa3d1;
+  --btn-tambah: #afa3d1;
+  --btn-hapus: #d88c9a;
+  --btn-edit: #949fbc;
+  -btn-close: #8e7dbe;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+.home {
+  width: 100%;
+  min-height: 100vh;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+}
+
+.home-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--background-color-secondary);
+  border-radius: 6px;
+  padding: 20px 16px;
+  max-width: 400px;
+  width: 280px;
+  height: 250px;
+}
+
+.home-title {
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: "Fasthand", cursive;
+  color: #8e7dbe;
+}
+
+.home-pilihan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  background-color: #8e7dbe;
+  border-radius: 6px;
+  width: 160px;
+  text-align: center;
+  height: 40px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--background-color-secondary);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+a i {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.btn-pemasukan{
+    margin-bottom: 10px;
+}

@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+
+.laporan {
+  
+  width: 100%;
+  min-height: 100vh;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d7d1e8;
+}
+
+.laporan-content {
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: #f7f6fa;
+  padding: 20px 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+p{
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid #afa3d1;
+  padding: 5px;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+select{
+  border: none;
+  background-color: #f7f6fa;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.laporan-input{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  text-align: left;
+  margin-top: 5px;
+}
+
+label{
+  font-size: 14px;
+}
+
+input{
+  height: 30px;
+  border: 1px solid #d7d1e8;
+  border-radius: 4px;
+  padding: 5px;
+  margin-right: 10px;
+  margin-top: 2px;
+}
+#tanggal{
+  width: 120px;
+}
+
+#tabung{
+  width: 120px;
+}
+
+#btn-tambah{
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  background-color: #afa3d1;
+  color: #f7f6fa;
+  font-weight: 600;
+}
+
+i{
+  font-size: 14px;
+}
+
+.popup{
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(175, 163, 209, 0.542);
+}
+
+.popup-content{
+  background-color: #f7f6fa;
+  padding: 40px 20px;
+  border-radius: 6px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+}
+.popup-content p{
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.popup-input{
+  display: flex;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.laporan-popup-content{
+  display: flex;
+  flex-direction: column;
+}
+
+#btn-hapus, #btn-edit{
+  border: none;
+  padding: 8px 0;
+  width: 100px;
+  border-radius: 4px;
+  font-weight: 500;
+  margin: 5px;
+}
+
+#btn-hapus{
+  background-color: #d88c9a;
+  color: #f7f6fa;
+}
+
+#btn-edit,.btn-download{
+  background-color: #949fbc;
+  color: #f7f6fa;
+}
+
+#close{
+  position: absolute;
+  font-size: 28px;
+  color: #8e7dbe;
+  right: 12px;
+  top: 16px;
+}
+
+
+
+#tanggal-edit,#tabung-edit{
+  width: 100%;
+}
+
+.btn-download{
+  font-size: 12px;
+  border: none;
+  padding: 8px 10px;
+  width: fit-content;
+  border-radius: 4px;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+.laporan-download{
+  display: none;
+  justify-content: center;
+  min-height: 100vh;
+  margin-top: 100px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
+.laporan-title-download{
+  margin-bottom: 20px;
+}
+
+.laporan-title-download p{
+  font-size: 16px;
+}
+
+.laporan-content-download{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.laporan-content-download th, .laporan-content-download td{
+  font-size: 14px;
+  border: .5px solid #222;
+  padding: 5px 16px;
+}
+
+.keluar {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+
+.keluar i{
+  font-size: 25px;
+  color: #8e7dbe;
+}
