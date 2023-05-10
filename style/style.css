@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --primary: #9d4edd;
+  --secondary: #bd9ed15b;
+  --text-black: #4c4452;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+body {
+  background-color: var(--secondary);
+}
+
+.pemasukan {
+  max-width: 320px;
+  margin: 0 auto;
+  background-color: #fff;
+  min-height: 100vh;
+  padding: 40px 10px;
+}
+
+.pemasukan-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.pemasukan-title h3 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--text-black);
+}
+
+.pemasukan-pangkalan p {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 22px;
+  color: var(--text-black);
+}
+
+.pemasukan-pangkalan {
+  margin-bottom: 20px;
+}
+
+.pemasukan-input {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  gap: 8px;
+}
+
+.pemasukan-input-content {
+  text-align: left !important;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 2px;
+  color: var(--text-black);
+}
+
+#tanggal,
+#tabung {
+  height: 28px;
+  padding: 0 5px;
+  width: 120px;
+  border: 1px solid #afa3d1;
+  border-radius: 2px;
+  outline: #afa3d1;
+}
+
+.btn-tambah {
+  flex: 1;
+  height: 28px;
+  border: none;
+  border-radius: 2px;
+  background-color: #bd9ed1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bx-plus {
+  font-size: 18px;
+  color: #fff;
+}
+
+.pemasukan-data {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.pemasukan-tabel {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+
+table,
+th,
+td {
+  border: 1px solid #afa3d1;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-black);
+}
+
+.bxs-folder-open{
+    font-size: 20px;
+    position: relative;
+    top: 2.5px;
+    color: var(--primary);
+}
+.pemasukan-detail{
+    width: 100%;
+    min-height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #4c44526e;
+    position: fixed;
+    left: 0;
+    z-index: 9999;
+}
+
+.pemasukan-detail-content{
+    max-width: 300px;
+    width: 100%;
+    height: fit-content;
+    padding: 40px 14px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+}
+
+.bx-task-x{
+    position: absolute;
+    font-size: 28px;
+    right: 5px;
+    top: 5px;
+    color: var(--text-black);
+}
+
+.detail-title{
+    margin-bottom: 20px;
+}
+
+.detail-title h2{
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-black);
+    letter-spacing: .2px;
+}
+
+.detail-input{
+    width: 100%;
+    
+}
+
+.detail-input-content{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.detail-input-content label{
+    font-size: 16px !important;
+    font-weight: 600;
+}
+
+.detail-input-content input{
+    width: 155px;
+    height: 35px;
+    padding: 0 5px;
+    border: 1px solid #9d4edd;
+    border-radius: 2px;
+    outline: none;
+    font-size: 14px;
+}
+
+
+.btn-edit,.btn-hapus{
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 16px;
+    width: fit-content;
+    padding: 6px 16px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.bx-edit,.bx-trash{
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+    margin-right: 2px;
+}
+
+.btn-edit{
+    background-color: #00D5FF;
+    margin-right: 10px;
+}
+
+.btn-hapus{
+    background-color: #FF7342;
+}

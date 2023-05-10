@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laporan Pemasukan</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="pemasukan-detail">
+      <div class="pemasukan-detail-content">
+        <i class='bx bx-task-x'></i>
+        <div class="detail-title">
+          <h2>DETAIL PEMASUKAN</h2>
+          <h2>Tanggal <span class="tgl">01/01/2020</span></h2>
+        </div>
+        <div class="detail-input">
+          <div class="detail-input-content">
+            <label>Tanggal </label>
+            <input type="date" name="tanggal" class="detail-tanggal" />
+          </div>
+          <div class="detail-input-content">
+            <label>Jumlah Tabung </label>
+            <input type="number" name="tabung" class="detail-tabung" />
+          </div>
+          <div class="detail-input-content">
+            <label>Harga Stor </label>
+            <input type="number" name="harga" class="detail-harga" />
+          </div>
+          <div class="detail-input-content">
+            <label>Total Stor </label>
+            <input type="number" name="total" class="detail-total" />
+          </div>
+
+          <button class="btn-edit"><i class="bx bx-edit"></i> Edit</button>
+          <button class="btn-hapus"><i class="bx bx-trash"></i> Hapus</button>
+        </div>
+      </div>
+    </div>
+    <div class="pemasukan">
+      <div class="pemasukan-content">
+        <div class="pemasukan-title">
+          <h3>LAPORAN PEMASUKAN</h3>
+        </div>
+        <div class="pemasukan-pangkalan">
+          <p>Nama Pangkalan : Adinda Heryuningtyas</p>
+          <p>No Reg Pangkalan : 315720892666012</p>
+          <p>Alamat : Daru Jambe</p>
+        </div>
+        <div class="pemasukan-input">
+          <div class="pemasukan-input-content">
+            <label>Tanggal</label>
+            <input type="date" id="tanggal" class="tanggal" />
+          </div>
+          <div class="pemasukan-input-content">
+            <label>Jumlah Tabung</label>
+            <input type="number" id="tabung" class="tabung" />
+          </div>
+          <button class="btn-tambah">
+            <i class="bx bx-plus"></i>
+          </button>
+        </div>
+        <div class="pemasukan-data">
+          <table class="pemasukan-tabel" id="pemasukan-tabel">
+            <tr>
+              <th>No</th>
+              <th>Tanggal</th>
+              <th>Jumlah Tabung</th>
+              <th>Detail</th>
+            </tr>
+            <tbody class="table-body"></tbody>
+            <tr>
+              <td colspan="2">Total</td>
+              <td class="total-tabung">0</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="main/main.js"></script>
+  </body>
+</html>
