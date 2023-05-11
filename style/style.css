@@ -39,7 +39,7 @@ body {
 }
 
 .pemasukan-pangkalan p {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.2px;
   line-height: 22px;
@@ -185,7 +185,7 @@ td {
 }
 
 .detail-input-content input{
-    width: 155px;
+    width: 150px;
     height: 35px;
     padding: 0 5px;
     border: 1px solid #9d4edd;
@@ -221,4 +221,69 @@ td {
 
 .btn-hapus{
     background-color: #FF7342;
+}
+
+.detail-harga,.detail-total{
+  width: 150px;
+  text-align: left !important;
+}
+
+.download{
+  display: none;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  padding: 80px 20px;
+}
+
+.download-content{
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.download-title{
+  margin-bottom: 30px;
+}
+
+.download-title p{
+  width: 100%;
+}
+
+.download-table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.download-table th, .download-table td{
+  border: 1px solid #000;
+  color: #000;
+}
+
+.btn-download{
+  margin-top: 30px;
+}
+
+.download-btn{
+  width: max-content;
+  padding: 8px 14px;
+  border: none;
+  background-color: #afa3d1;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bx-save{
+  font-size: 20px;
+  margin-right: 5px;
+  position: relative;
+  top: -1px;
 }
