@@ -16,7 +16,7 @@ body {
   background-color: var(--secondary);
 }
 
-.pemasukan {
+.pengeluaran {
   max-width: 320px;
   margin: 0 auto;
   background-color: #fff;
@@ -24,21 +24,21 @@ body {
   padding: 40px 10px;
 }
 
-.pemasukan-content {
+.pengeluaran-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-.pemasukan-title h3 {
+.pengeluaran-title h3 {
   font-size: 20px;
   font-weight: 800;
   margin-bottom: 20px;
   color: var(--text-black);
 }
 
-.pemasukan-pangkalan p {
+.pengeluaran-pangkalan p {
   font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.2px;
@@ -46,19 +46,19 @@ body {
   color: var(--text-black);
 }
 
-.pemasukan-pangkalan {
+.pengeluaran-pangkalan {
   margin-bottom: 20px;
 }
 
-.pemasukan-input {
+.pengeluaran-input {
   display: flex;
-  align-items: flex-end;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
   gap: 8px;
 }
 
-.pemasukan-input-content {
+.pengeluaran-input-content {
   text-align: left !important;
   display: flex;
   flex-direction: column;
@@ -72,10 +72,12 @@ label {
 }
 
 #tanggal,
-#tabung {
+#jenis,
+#harga,
+#keterangan {
   height: 28px;
   padding: 0 5px;
-  width: 120px;
+  width: 140px;
   border: 1px solid #afa3d1;
   border-radius: 2px;
   outline: #afa3d1;
@@ -90,19 +92,23 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #fff;
+  font-weight: 500;
+  margin-top: 5px;
 }
 
 .bx-plus {
-  font-size: 18px;
+  font-size: 16px;
   color: #fff;
+  margin-right: 5px;
 }
 
-.pemasukan-data {
+.pengeluaran-data {
   width: 100%;
   margin-top: 20px;
 }
 
-.pemasukan-tabel {
+.pengeluaran-tabel {
   border-collapse: collapse;
   width: 100%;
 }
@@ -116,6 +122,51 @@ td {
   font-weight: 500;
   color: var(--text-black);
 }
+.btn-download {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-pemasukan {
+  height: 28px;
+  padding: 0 5px;
+  width: 180px;
+  border: 1px solid #afa3d1;
+  border-radius: 2px;
+  outline: #afa3d1;
+}
+
+.download-btn {
+  margin-top: 20px;
+  width: max-content;
+  padding: 8px 14px;
+  border: none;
+  background-color: #afa3d1;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bx-save {
+  font-size: 20px;
+  margin-right: 5px;
+  position: relative;
+  top: -1px;
+}
 
 .bxs-folder-open {
   font-size: 20px;
@@ -123,7 +174,8 @@ td {
   top: 2.5px;
   color: var(--primary);
 }
-.pemasukan-detail {
+
+.pengeluaran-detail {
   width: 100%;
   min-height: 100vh;
   display: none;
@@ -135,7 +187,7 @@ td {
   z-index: 9999;
 }
 
-.pemasukan-detail-content {
+.pengeluaran-detail-content {
   max-width: 300px;
   width: 100%;
   height: fit-content;
@@ -183,7 +235,7 @@ td {
 }
 
 .detail-input-content input {
-  width: 150px;
+  width: 170px;
   height: 35px;
   padding: 0 5px;
   border: 1px solid #9d4edd;
@@ -259,37 +311,25 @@ td {
 }
 
 .download-table th,
-.download-table td {
+.download-table td,
+.saldo td {
   border: 1px solid #000;
   color: #000;
 }
 
-.btn-download {
-  margin-top: 30px;
+.download-total{
+    margin-top: 40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.download-btn {
-  width: max-content;
-  padding: 8px 14px;
-  border: none;
-  background-color: #afa3d1;
-  font-size: 14px;
-  font-weight: 600;
-  color: #fff;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.saldo{
+    border-collapse: collapse;
 }
 
-.bx-save {
-  font-size: 20px;
-  margin-right: 5px;
-  position: relative;
-  top: -1px;
-}
-
-.link {
+.link{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -298,12 +338,14 @@ td {
   margin-bottom: 20px;
 }
 
-.link a {
+.link a{
   text-decoration: none;
   font-size: 14px;
+  
 }
 
-.nonactive {
+.nonactive{
+
   height: 40px;
   width: 55%;
   line-height: 40px;
@@ -313,13 +355,13 @@ td {
   cursor: pointer;
 }
 
-.active {
+.active{
   background-color: #bd9ed1;
   height: 40px;
   width: 60%;
   line-height: 40px;
   position: relative;
-  right: 10px;
+  left: 10px;
   color: #fff;
   font-weight: 500;
   cursor: pointer;

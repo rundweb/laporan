@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pengeluaran</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="pengeluaran-detail">
+      <div class="pengeluaran-detail-content">
+        <i class="bx bx-task-x"></i>
+        <div class="detail-title">
+          <h2>DETAIL PEMASUKAN</h2>
+          <h2>Tanggal <span class="tgl"></span></h2>
+        </div>
+        <div class="detail-input">
+          <div class="detail-input-content">
+            <label>Tanggal </label>
+            <input type="date" name="tanggal" class="detail-tanggal" />
+          </div>
+          <div class="detail-input-content">
+            <label>Jenis</label>
+            <input type="text" name="jenis" class="detail-jenis" />
+          </div>
+          <div class="detail-input-content">
+            <label>Harga</label>
+            <input type="number" name="harga" class="detail-harga" />
+          </div>
+          <div class="detail-input-content">
+            <label>Keterangan</label>
+            <input type="text" name="keterangan" class="detail-keterangan" />
+          </div>
+          <div class="btn-detail"></div>
+        </div>
+      </div>
+    </div>
+    <div class="pengeluaran">
+      <div class="pengeluaran-content">
+        <div class="link">
+            <a href="/index.html" class="nonactive">Laporan Pemasukan</a>
+            <a href="index.html" class="active">Laporan pengeluaran</a>
+        </div>
+        <div class="pengeluaran-title">
+          <h3>LAPORAN PENGELUARAN</h3>
+        </div>
+        <div class="pengeluaran-pangkalan">
+          <p>Nama Pangkalan : Adinda Heryuningtyas</p>
+          <p>No Reg Pangkalan : 315720892666012</p>
+          <p>Alamat : Daru Jambe</p>
+        </div>
+        <div class="pengeluaran-input">
+          <div class="pengeluaran-input-content">
+            <label>Tanggal</label>
+            <input type="date" id="tanggal" class="tanggal" />
+          </div>
+          <div class="pengeluaran-input-content">
+            <label>Jenis Pengeluaran</label>
+            <input type="text" id="jenis" class="jenis" placeholder="Gaji" />
+          </div>
+          <div class="pengeluaran-input-content">
+            <label>Harga Pengeluaran</label>
+            <input
+              type="number"
+              id="harga"
+              class="harga"
+              placeholder="Rp.200.000"
+            />
+          </div>
+          <div class="pengeluaran-input-content">
+            <label>Keterangan</label>
+            <input
+              type="text"
+              id="keterangan"
+              class="keterangan"
+              placeholder="Oleh"
+            />
+          </div>
+          <button class="btn-tambah">
+            <i class="bx bx-plus"></i> Tambah Pengeluaran
+          </button>
+        </div>
+        <div class="pengeluaran-data">
+          <table class="pengeluaran-tabel" id="pengeluaran-tabel">
+            <tr>
+              <th>No</th>
+              <th>Tanggal</th>
+              <th>Jenis pengeluaran</th>
+              <th>Detail</th>
+            </tr>
+            <tbody class="table-body"></tbody>
+          </table>
+        </div>
+        <div class="btn-download">
+          <div class="download-input">
+            <label>Masukan Jumlah Pemasukan</label>
+            <input
+              type="number"
+              class="input-pemasukan"
+              placeholder="Rp. 44.400.000"
+            />
+          </div>
+          <button class="download-btn" onclick="download()">
+            <i class="bx bx-save"></i> Download Laporan
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="download">
+      <div class="download-content">
+        <div class="download-title">
+          <p>Nama Pangkalan : Adinda Heryuningtyas</p>
+          <p>No Reg Pangkalan : 315720892666012</p>
+          <p>Alamat : Daru Jambe</p>
+        </div>
+        <div class="download-data">
+          <table class="download-table" id="download-table">
+            <tr>
+              <th>No</th>
+              <th>Tanggal</th>
+              <th>Jenis Pengeluaran</th>
+              <th>Harga Pengeluaran</th>
+              <th>Keterangan</th>
+            </tr>
+            <tbody class="donwload-body"></tbody>
+            <tr>
+              <td colspan="3">Total</td>
+              <td class="total-pengeluaran">0</td>
+              <td class="harga-tabung"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="download-total">
+            <p style="margin-bottom: 10px; font-weight: 700;">Saldo Akhir Bulan <span class="bln"></span></p>
+            <table class="saldo">
+                <tr>
+                    <td>Total Setoran</td>
+                    <td class="total-pemasukan"></td>
+                </tr>
+                <tr>
+                    <td>Total Pengeluaran</td>
+                    <td class="total-pengeluaranN"></td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td class="total"></td>
+                </tr>
+            </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/main.js"></script>
+  </body>
+</html>
